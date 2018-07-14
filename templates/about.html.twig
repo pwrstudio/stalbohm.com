@@ -2,28 +2,34 @@
 
 {% block content %}
 
-  {# ABOUT #}
-  <header id='header' class="header">
-    <div id='headline' class='header--headline'>
-      <span class='header--headline--title'>{{ page.header.headline }}</span>
-      <span class='header--headline--close'>schliessen</span>
+    {# ABOUT #}
+    {% set about = page.find('/home') %}
+    <header id='header' class="header">
+        <div id='headline' class='header--headline'>
+        <span class='header--headline--title'>{{ about.header.headline }}</span>
+        <span class='header--headline--close'>schliessen</span>
+        </div>
+        <div class='header--contact'>{{ about.header.contact|markdown }}</div>
+        <div class='header--about'>{{ about.content|markdown }}</div>
+    </header>
+
+  {# IMAGES & CAPTIONS #}
+  {% set items = page.find('/images').children %}
+  {% for item in items %}
+    <div class='item' id='{{item.slug}}'>
+        <a class='item--link' href=''>
+        <img 
+            class='item--image' 
+            srcset="{{item.media[item.header.image].resize(500).url}} 600w,
+                    {{item.media[item.header.image].resize(800).url}} 900w,
+                    {{item.media[item.header.image].url}} 1200w"
+            sizes="(max-width: 600px) 600px,
+                    (max-width: 900px) 900px,
+                    1200px"
+            src="{{item.media[item.header.image].url}}" alt="{{item.content|markdown}}">
+        </a>
+      <div class='item--caption'>{{item.content|markdown}}</div>
     </div>
-    <div class='header--contact'>{{ page.header.contact }}</div>
-    <div class='header--about'>{{ page.header.about }}</div>
-  </header>
-
-  {# IMAGES #}
-  <div id='images' class='images'>
-      {% for p in page.find('/images').children if p != page %}
-        <img id='image-{{p.slug}}' class='images--item' src='{{p.media[p.header.image].url}}'/>
-      {% endfor %}
-  </div>
-
-  {# CAPTIONS #}
-  <div id='captions' class='captions'>
-    {% for p in page.find('/images').children if p != page %}
-      <p id='caption-{{p.slug}}' class='captions--item'> {{p.header.caption}}'</p>
-    {% endfor %}
-  </div>
+  {% endfor %}
 
 {% endblock %}

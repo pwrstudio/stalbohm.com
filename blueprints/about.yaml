@@ -13,8 +13,4 @@ form:
             header.contact:
               type: editor
               label: Contact
-            header.about:
-              type: editor
-              label: About
-
 

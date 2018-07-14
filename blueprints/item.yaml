@@ -22,11 +22,3 @@ form:
                   acccept:
                     - .png
                     - .jpg
-            caption:
-              type: section
-              title: Caption
-              underline: true
-              fields:
-                header.caption:
-                  type: editor
-                  label: Caption

@@ -17,10 +17,30 @@
             document.getElementById('headline').addEventListener('click', e => {
                 document.getElementById('header').classList.toggle('open')
             })
-            // Slideshow
-            document.getElementById('images').addEventListener('click', e => {
-                window.alert('asasdfasd')
-            })
+
+            // Slideshow mechanics
+
+            // Get all item containers
+            var items = document.getElementsByClassName('item')
+
+            // Show first image if no hash is specified
+            if(!window.location.hash) {
+                window.location.hash = '#' + items[0].id
+            }
+
+            // Loop over all item containers and set the link to the next image
+            for(let i = 0; i < items.length; i++) {
+                let thisLink = items[i].getElementsByClassName('item--link')[0]
+                var slug = ''
+                if(i === items.length - 1) {
+                    slug = items[0].id
+                } else {
+                    slug = items[i+1].id
+                }
+                thisLink.href = '#' + slug
+            }
+
         </script>
+        {# {{ assets.js }} #}
     </body>
 </html>
