@@ -1,0 +1,26 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getLanguage ?: 'en' }}">
+
+    <head>
+        {% block head %}
+            {% include 'partials/head.html.twig' %}
+        {% endblock %}
+    </head>
+
+    <body{% if page.header.body_classes %} class="{{ page.header.body_classes }}"{% endif %}>
+
+        {% block content %}{% endblock %}
+
+        <script>
+            // Show about text
+            document.getElementById('headline').addEventListener('click', e => {
+                document.getElementById('header').classList.toggle('open')
+            })
+            // Slideshow
+            document.getElementById('images').addEventListener('click', e => {
+                window.alert('asasdfasd')
+            })
+        </script>
+    </body>
+</html>

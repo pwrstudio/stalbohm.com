@@ -1,0 +1,20 @@
+//
+//  Breakpoints
+//
+$breakpoints: (
+    'small': (
+        max-width: 700px
+    ),
+    'medium': (
+        max-width: 1088px
+    ),
+    'sm': (
+        max-width: 920px
+    ),
+    'large': (
+        min-width: 1400px
+    ),
+    'short': (
+        max-height: 600px
+    )
+);

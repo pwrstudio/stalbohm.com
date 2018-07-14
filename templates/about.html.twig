@@ -1,0 +1,29 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+
+  {# ABOUT #}
+  <header id='header' class="header">
+    <div id='headline' class='header--headline'>
+      <span class='header--headline--title'>{{ page.header.headline }}</span>
+      <span class='header--headline--close'>schliessen</span>
+    </div>
+    <div class='header--contact'>{{ page.header.contact }}</div>
+    <div class='header--about'>{{ page.header.about }}</div>
+  </header>
+
+  {# IMAGES #}
+  <div id='images' class='images'>
+      {% for p in page.find('/images').children if p != page %}
+        <img id='image-{{p.slug}}' class='images--item' src='{{p.media[p.header.image].url}}'/>
+      {% endfor %}
+  </div>
+
+  {# CAPTIONS #}
+  <div id='captions' class='captions'>
+    {% for p in page.find('/images').children if p != page %}
+      <p id='caption-{{p.slug}}' class='captions--item'> {{p.header.caption}}'</p>
+    {% endfor %}
+  </div>
+
+{% endblock %}

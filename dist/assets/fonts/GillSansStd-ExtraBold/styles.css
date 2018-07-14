@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'GillSansStd-ss';
+  src: url('GillSansStd-ExtraBold.eot?#iefix') format('embedded-opentype'),  url('GillSansStd-ExtraBold.otf')  format('opentype'),
+	     url('GillSansStd-ExtraBold.woff') format('woff'), url('GillSansStd-ExtraBold.ttf')  format('truetype'), url('GillSansStd-ExtraBold.svg#GillSansStd-ExtraBold') format('svg');
+  font-weight: 1100;
+  font-style: normal;
+}

@@ -1,0 +1,32 @@
+title: Item
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            featured_image:
+              type: section
+              title: Image
+              underline: true
+              fields:
+                header.image:
+                  type: filepicker
+                  label: Image
+                  placeholder: Image file
+                  folder: 'self@'
+                  toggleable: false
+                  preview_images: true
+                  acccept:
+                    - .png
+                    - .jpg
+            caption:
+              type: section
+              title: Caption
+              underline: true
+              fields:
+                header.caption:
+                  type: editor
+                  label: Caption

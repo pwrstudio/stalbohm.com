@@ -1,0 +1,20 @@
+title: About
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.headline:
+              type: text
+              label: Headline
+            header.contact:
+              type: editor
+              label: Contact
+            header.about:
+              type: editor
+              label: About
+
+
