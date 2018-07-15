@@ -6,8 +6,8 @@
     {% set about = page.find('/home') %}
     <header id='header' class="header">
         <div id='headline' class='header--headline'>
-        <span class='header--headline--title'>{{ about.header.headline }}</span>
-        <span class='header--headline--close'>schliessen</span>
+          <span class='header--headline--title'>{{ about.header.headline }}</span>
+          <span class='header--headline--close'>schliessen</span>
         </div>
         <div class='header--contact'>{{ about.header.contact|markdown }}</div>
         <div class='header--about'>{{ about.content|markdown }}</div>
