@@ -8,7 +8,7 @@
         {% endblock %}
     </head>
 
-    <body{% if page.header.body_classes %} class="{{ page.header.body_classes }}"{% endif %}>
+    <body>
 
         {% block content %}{% endblock %}
 
@@ -29,8 +29,8 @@
             }
 
             // Loop over all item containers and set the link to the next image
-            for(let i = 0; i < items.length; i++) {
-                let thisLink = items[i].getElementsByClassName('item--link')[0]
+            for(var i = 0; i < items.length; i++) {
+                var thisLink = items[i].getElementsByClassName('item--link')[0]
                 var slug = ''
                 if(i === items.length - 1) {
                     slug = items[0].id
@@ -39,7 +39,6 @@
                 }
                 thisLink.href = '#' + slug
             }
-
         </script>
         {# {{ assets.js }} #}
     </body>
