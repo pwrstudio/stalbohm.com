@@ -12,8 +12,8 @@ body {
     background-color: #fff;
     color: #000;
     font-family: 'courier', monospace;
-    font-size: 14px;
-    line-height: 18px;
+    font-size: 13px;
+    line-height: 17px;
     overflow: hidden;
     margin: 0;
 }
@@ -23,10 +23,13 @@ body {
     left: 0;
     width: 100%;
     text-align: center;
-    top: 20px;
+    top: 40px;
     z-index: 100;
+    @include screen-size('small') {
+        top: 20px;
+    }
     div {
-        max-width: 80ch;
+        max-width: 70ch;
         margin-left: auto;
         margin-right: auto;
         padding-right: 20px;
@@ -51,13 +54,12 @@ body {
     }
     &--about {
         display: none;
-        text-align: left;
         @include screen-size('small') {
+            text-align: left;
             height: 100vh;
             background: #fff;
         }
     }
-
     &.open {
         .header--about {
             display: block;
@@ -95,8 +97,11 @@ a {
     width: auto;
     text-align: center;
     position: fixed;
-    bottom: 20px;
+    bottom: 40px;
     width: 100%;
+    @include screen-size('small') {
+        bottom: 20px;
+    }
 }
 
 .item {
@@ -107,7 +112,7 @@ a {
     align-items: center;
     display: none;
     &--image {
-        max-height: 80vh;
+        max-height: 70vh;
         max-width: 85vw;
         &.fullscreen {
             max-height: 100vh;
