@@ -13,4 +13,3 @@ form:
             header.contact:
               type: editor
               label: Contact
-

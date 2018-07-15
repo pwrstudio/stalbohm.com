@@ -22,3 +22,13 @@ form:
                   acccept:
                     - .png
                     - .jpg
+                header.fullscreen:
+                  type: toggle
+                  label: Fullscreen
+                  highlight: 1
+                  help: PLUGIN_ADMIN.ENABLED_HELP
+                  options:
+                      1: PLUGIN_ADMIN.YES
+                      0: PLUGIN_ADMIN.NO
+                  validate:
+                      type: bool

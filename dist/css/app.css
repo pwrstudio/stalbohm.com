@@ -59,6 +59,7 @@ body {
   font-size: 14px;
   line-height: 18px;
   overflow: hidden;
+  margin: 0;
 }
 
 .header {
@@ -172,8 +173,13 @@ a:hover {
 }
 
 .item--image {
-  max-height: 90vh;
-  max-width: 95vw;
+  max-height: 80vh;
+  max-width: 85vw;
+}
+
+.item--image.fullscreen {
+  max-height: 100vh;
+  max-width: 100vw;
 }
 
 .item:target {
