@@ -9,7 +9,14 @@
           <span class='header--headline--title'>{{ about.header.headline }}</span>
           <span class='header--headline--close'>schliessen</span>
         </div>
-        <div class='header--contact'>{{ about.header.contact|markdown }}</div>
+        <div class='header--contact'>
+        <div>
+          <span>{{ about.header.address|markdown }}</span>
+          <span>{{ about.header.phone|markdown }}</span>
+        </div>
+        {% set replace_value_var = '@' %}
+        {% set replace_with_value_var = '[at]' %} 
+        <span><a href='mailto:{{ about.header.mail }}'>{{ about.header.mail|replace({ (replace_value_var): replace_with_value_var }) }}</a></span>
         <div class='header--about'>{{ about.content|markdown }}</div>
     </header>
 
@@ -21,12 +28,12 @@
         {% if item.header.fullscreen %}
         <img 
             class='item--image fullscreen' 
-            srcset="{{item.media[item.header.image].resize(600).url}} 600w,
-                    {{item.media[item.header.image].resize(900).url}} 900w,
+            srcset="{{item.media[item.header.image].resize(500).url}} 500w,
+                    {{item.media[item.header.image].resize(700).url}} 700w,
                     {{item.media[item.header.image].url}} 1200w"
-            sizes="(max-width: 600px) 600px,
-                    (max-width: 900px) 900px,
-                    1200px"
+            sizes="(max-width: 500px) 500px,
+                    (max-width: 700px) 700px,
+                    1000px"
             src="{{item.media[item.header.image].url}}" alt="{{item.content|markdown}}">
         {% else %}
         <img 

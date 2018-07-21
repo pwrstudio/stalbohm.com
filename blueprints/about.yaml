@@ -10,6 +10,12 @@ form:
             header.headline:
               type: text
               label: Headline
-            header.contact:
-              type: editor
-              label: Contact
+            header.mail:
+              type: text
+              label: Email
+            header.phone:
+              type: text
+              label: Phone number
+            header.address:
+              type: text
+              label: Address
