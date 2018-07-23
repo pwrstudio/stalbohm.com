@@ -10,13 +10,16 @@
           <span class='header--headline--close'>schliessen</span>
         </div>
         <div class='header--contact'>
-        <div>
-          <span>{{ about.header.address|markdown }}</span>
-          <span>{{ about.header.phone|markdown }}</span>
+          <div>
+            <span>{{ about.header.address|markdown }}</span>
+            <span>{{ about.header.phone|markdown }}</span>
+          </div>
+          {% set replace_value_var = '@' %}
+          {% set replace_with_value_var = '[at]' %} 
+          <span>
+            <a href='mailto:{{ about.header.mail }}'>{{ about.header.mail|replace({ (replace_value_var): replace_with_value_var }) }}</a>
+          </span>
         </div>
-        {% set replace_value_var = '@' %}
-        {% set replace_with_value_var = '[at]' %} 
-        <span><a href='mailto:{{ about.header.mail }}'>{{ about.header.mail|replace({ (replace_value_var): replace_with_value_var }) }}</a></span>
         <div class='header--about'>{{ about.content|markdown }}</div>
     </header>
 

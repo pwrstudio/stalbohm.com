@@ -125,8 +125,12 @@ a {
         max-height: 70vh;
         max-width: 85vw;
         &.fullscreen {
-            max-height: 101vh;
-            max-width: 101vw;
+            width: 100vw;
+            height: 101vh;
+            max-height: unset;
+            max-width: unset;
+            object-fit: cover;
+            // TODO: polyfill object-fit for IE
         }
     }
 
