@@ -3,7 +3,7 @@ namespace Grav\Theme;
 
 use Grav\Common\Theme;
 
-class Haywire extends Theme
+class Stalbohm extends Theme
 {
     public static function getSubscribedEvents()
     {
